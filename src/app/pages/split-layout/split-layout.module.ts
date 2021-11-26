@@ -1,12 +1,13 @@
 import { ComponentsModule } from 'src/app/component/components.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { IonicModule } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
-import { HomePage } from './home.page';
 
-import { HomePageRoutingModule } from './home-routing.module';
+import { IonicModule } from '@ionic/angular';
 
+import { SplitLayoutPageRoutingModule } from './split-layout-routing.module';
+
+import { SplitLayoutPage } from './split-layout.page';
 
 @NgModule({
   imports: [
@@ -14,8 +15,8 @@ import { HomePageRoutingModule } from './home-routing.module';
     FormsModule,
     IonicModule,
     ComponentsModule,
-    HomePageRoutingModule
+    SplitLayoutPageRoutingModule
   ],
-  declarations: [HomePage]
+  declarations: [SplitLayoutPage]
 })
-export class HomePageModule {}
+export class SplitLayoutPageModule {}

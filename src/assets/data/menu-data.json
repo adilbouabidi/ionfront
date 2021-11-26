@@ -1,0 +1,44 @@
+[{
+    "title": "Article",
+    "icon": "mail",
+    "child": [{
+      "id":1,
+      "title": "Sub Article 1",
+      "url": "/app/articles/",
+      "icon": "storefront",
+      "param":{"titre":"Gestion des Articles 1"}
+    }, {
+      "id":2,
+      "title": "Sub Article 2",
+      "url": "/app/articles/",
+      "icon": "mail",
+      "param":{"titre":"Gestion des Articles 2"}
+    }]
+  },
+  {
+    "title": "Client",
+    "url": "/app/clients",
+    "param":{"titre":"Gestion des Clients"},
+    "icon": "paper-plane"
+  },
+  {
+    "title": "Favorites",
+    "url": "/folder/Favorites",
+    "icon": "heart"
+  },
+  {
+    "title": "Archived",
+    "url": "/folder/Archived",
+    "icon": "archive"
+  },
+  {
+    "title": "Trash",
+    "url": "/folder/Trash",
+    "icon": "trash"
+  },
+  {
+    "title": "Spam",
+    "url": "/folder/Spam",
+    "icon": "warning"
+  }
+]

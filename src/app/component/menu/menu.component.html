@@ -1,0 +1,44 @@
+<div *ngFor="let p of appPages">
+  <ion-menu-toggle autoHide="false" *ngIf="p.url">
+    <ion-item      
+      routerDirection="root"
+      [routerLink]="[p.url]"
+      routerLinkActive="active-item"
+    >
+      <ion-icon
+        slot="start"
+        [ios]="p.icon + '-outline'"
+        [md]="p.icon + '-sharp'"
+      ></ion-icon>
+      <ion-label>{{ p.title }}</ion-label>
+    </ion-item>
+  </ion-menu-toggle>
+  <ion-item
+    *ngIf="p.child?.length > 0"
+    (click)="p.open = !p.open"
+    [class.active-parent]="p.open"
+    detail="false"
+  >
+  <ion-icon slot="start"  name="caret-forward-outline" *ngIf="!p.open"></ion-icon>
+  <ion-icon slot="start"  name="caret-down-outline" *ngIf="p.open"></ion-icon>
+
+    <ion-label>{{ p.title }}</ion-label>
+  </ion-item>
+  <ion-list *ngIf="p.open">
+    <ion-menu-toggle autoHide="false" *ngFor="let c of p.child">
+      <ion-item
+        class="sub-item"
+        routerDirection="root"
+        [routerLink]="[c.url+c.id, c.param]"
+        routerLinkActive="active-item"
+      >
+        <ion-icon
+          slot="start"
+          [ios]="c.icon + '-outline'"
+          [md]="c.icon + '-sharp'"
+        ></ion-icon>
+        <ion-label>{{ c.title }}</ion-label>
+      </ion-item>
+    </ion-menu-toggle>
+  </ion-list>
+</div>
